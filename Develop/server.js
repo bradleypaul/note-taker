@@ -13,7 +13,9 @@ app.get('/notes', async (req, res) => {
 
 app.get('/api/notes', async(req, res) => {
     console.log("Got DB");
-    res.send (await fs.promises.readFile('./db/db.json', 'utf-8'));
+    const json = await fs.promises.readFile('./db/db.json', 'utf-8');
+    // console.log()
+    res.send(JSON.parse(json));
 });
 
 app.post('/api/notes', async(req, res) => {

@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Paul Bradley",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   }
 }

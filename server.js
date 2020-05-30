@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const {get, set} = require('./db');
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 3001;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));

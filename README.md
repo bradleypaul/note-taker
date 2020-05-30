@@ -48,7 +48,9 @@ Testing suite is written in Jest. Tests are in __tests__.
 ## Contact
 
 GitHub profile: [bradleypaul](https://github.com/bradleypaul)
+
 My email is: [bradleypauld@gmail.com](mailto:bradleypauld@gmail.com)
+
 Feel free to email me at any time for more information, even moreso if you're looking to fill a JS or Python-based full-stack role. :)
 
 ## Live Site

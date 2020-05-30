@@ -15,10 +15,7 @@ const port = 8080;
 app.use(express.static(`${__dirname}`));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/notes', async (req, res) => {
-    res.sendFile(`${__dirname}/public/notes.html`);
-});
-
+// api routes
 app.get('/api/notes', async (req, res) => {
     res.send(await get());
 });
@@ -27,7 +24,7 @@ app.post('/api/notes', async (req, res) => {
     const note = req.body;
     note.id = uniqid();
     const notesDB = await get();
-    
+
     // combine db with new note
     await set([...notesDB, note])
 
@@ -42,7 +39,12 @@ app.delete('/api/notes/:noteId', async (req, res) => {
 
     // send 204 because it's ok, no need to send a payload though.
     res.sendStatus(204); 
-}) 
+});
+
+// page routing
+app.get('/notes', async (req, res) => {
+    res.sendFile(`${__dirname}/public/notes.html`);
+});
 
 app.get('*', async (req, res) => {
     res.sendFile(`${__dirname}/public/index.html`);

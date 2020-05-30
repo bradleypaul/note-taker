@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path = require('path');
 // uniqid makes unique ids off of time, package, and process.
 // should be very slim chance that this generates two identical ids
 const uniqid = require('uniqid');
@@ -12,7 +12,7 @@ const {get, set} = require('./db');
 const app = express();
 const port = 8080;
 
-app.use(express.static(`${__dirname}`));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // api routes
@@ -43,11 +43,11 @@ app.delete('/api/notes/:noteId', async (req, res) => {
 
 // page routing
 app.get('/notes', async (req, res) => {
-    res.sendFile(`${__dirname}/public/notes.html`);
+    res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
 app.get('*', async (req, res) => {
-    res.sendFile(`${__dirname}/public/index.html`);
+    res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.listen(port, () => {

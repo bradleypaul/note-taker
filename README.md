@@ -15,6 +15,7 @@ This project allows users to create, view, and delete notes from a common db imp
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Contact](#contact)
+* [Live Site](#live-site)
 
 ## Installation
 
@@ -49,4 +50,8 @@ Testing suite is written in Jest. Tests are in __tests__.
 GitHub profile: [bradleypaul](https://github.com/bradleypaul)
 My email is: [bradleypauld@gmail.com](mailto:bradleypauld@gmail.com)
 Feel free to email me at any time for more information, even moreso if you're looking to fill a JS or Python-based full-stack role. :)
-  
+
+## Live Site
+
+<https://fathomless-ocean-72290.herokuapp.com/>
+![Live site screenshot](./screenshot.png)

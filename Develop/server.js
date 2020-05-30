@@ -27,7 +27,8 @@ app.post('/api/notes', async (req, res) => {
     const note = req.body;
     note.id = uniqid();
     const notesDB = await get();
-    // combine db with ne note
+    
+    // combine db with new note
     await set([...notesDB, note])
 
     // send result to api

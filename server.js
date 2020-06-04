@@ -33,7 +33,7 @@ app.post('/api/notes', async (req, res) => {
 });
 
 app.delete('/api/notes/:noteId', async (req, res) => {
-    const notesDB = (await get()).filter(item => item.id === req.params.id);
+    const notesDB = (await get()).filter(item => item.id !== req.params.noteId);
 
     await set(notesDB);
 
